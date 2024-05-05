@@ -24,11 +24,7 @@ Vache Taureau is a fun and challenging quiz game developed for Android devices u
 3. Connect your Android device or use an emulator.
 4. Build and run the project on your device.
 
-## Screenshots
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
-![Screenshot 3](/path/to/screenshot3.png)
 
 ## Contributing
 
