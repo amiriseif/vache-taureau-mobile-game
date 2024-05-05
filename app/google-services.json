@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "361892729601",
+    "firebase_url": "https://vache-taureau-game-default-rtdb.firebaseio.com",
+    "project_id": "vache-taureau-game",
+    "storage_bucket": "vache-taureau-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361892729601:android:b7e7ecb7db371273cf4100",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQubma3DzqyDASuHNH9kF04lomhlyXvqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

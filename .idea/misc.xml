@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_game.xml" value="0.2" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_gmenu.xml" value="0.264" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_item.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_list_view.xml" value="0.18125" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_login_signin.xml" value="0.1" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_ranking.xml" value="0.25" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_setting.xml" value="0.2" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/MyApplication/app/src/main/res/layout/activity_signin.xml" value="0.264" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_gmenu.xml" value="0.11979166666666667" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_item.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_list_view.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_ranking.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/SpotifyPremium-main/MyApplication/app/src/main/res/layout/activity_signin.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_game.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_gmenu.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.536" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_profilepicture.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_resetpassword.xml" value="0.176" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/Users/seifl/OneDrive/Desktop/bil firebase/MyApplication/app/src/main/res/layout/activity_signin.xml" value="0.19021739130434784" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

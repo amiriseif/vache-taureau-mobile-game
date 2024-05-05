@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+
+    tools:context=".Gmenu">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="338dp"
+        android:layout_height="307dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:onClick="begame"
+            android:text="start game"
+            android:textSize="40dp"
+            app:backgroundTint="#FF9C07"
+            app:strokeColor="@color/white"
+            app:strokeWidth="5dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:onClick="setting"
+            android:text="setting"
+            android:textSize="40dp"
+            app:backgroundTint="#FF9C07"
+            app:strokeColor="@color/white"
+            app:strokeWidth="5dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="view record"
+            android:onClick="rank"
+            android:textSize="40dp"
+            app:backgroundTint="#FF9C07"
+            app:strokeColor="@color/white"
+            app:strokeWidth="5dp"/>/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:onClick="finish"
+            android:text="exit"
+            android:textSize="40dp"
+            app:backgroundTint="#FF9C07"
+            app:strokeColor="@color/white"
+            app:strokeWidth="5dp" />/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userlabel"
+        android:layout_width="136dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="36dp"
+
+        android:text="username"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/profilepic"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/userlabel"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="profilpicture"
+        app:srcCompat="@drawable/pdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
