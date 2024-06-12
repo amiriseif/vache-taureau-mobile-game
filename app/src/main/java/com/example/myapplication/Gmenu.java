@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class Gmenu extends AppCompatActivity {
 
-    Intent intent2,intent3;
+    Intent intent2;
     String username,email;
     Intent intent;
     TextView userlabel;
@@ -27,16 +28,17 @@ public class Gmenu extends AppCompatActivity {
     FirebaseFirestore fstore;
     String userid;
     ImageView profile;
-    int imagesrc;
+
     dbhelper db;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gmenu);
 
-        intent = getIntent();
-        email = intent.getStringExtra("email");
+
+        preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
 
         db = new dbhelper(this);
         profile = findViewById(R.id.profilepic);
@@ -45,43 +47,33 @@ public class Gmenu extends AppCompatActivity {
         fauth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         userid = fauth.getCurrentUser().getUid();
-        DocumentReference documentReference = fstore.collection("users").document(userid);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(DocumentSnapshot value, FirebaseFirestoreException error) {
-                if (value != null && value.exists()) {
-                    username = value.getString("username");
-                    userlabel.setText(username);
-                    //profile.setImageResource(R.drawable.icon2);
-                    Toast.makeText(Gmenu.this, String.valueOf(db.geticonsrc(email)), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(Gmenu.this, "Document does not exist", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        username = preferences.getString("username", "");
+        email = preferences.getString("email", "");
+        userlabel.setText(username);
         profile.setImageResource(db.geticonsrc(email));
     }
 
     public void profilpicture(View view) {
 
-        intent=new Intent(Gmenu.this,profilepicture.class);
-        intent.putExtra("username", email);
+        intent=new Intent(Gmenu.this,profile.class);
+
         startActivity(intent);
         finish();
+
 
     }
 
     public void finish(View view) {
-        finishAffinity();
-        intent=new Intent(Gmenu.this,MainActivity.class);
-        startActivity(intent);
+        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString("remember","false");
+        editor.apply();
+        finish();
     }
 
     public void begame(View view) {
         intent2 = new Intent(Gmenu.this, game.class);
-        intent2.putExtra("username", username);
-        intent2.putExtra("email",email);
+
 
         startActivity(intent2);
 
@@ -90,8 +82,7 @@ public class Gmenu extends AppCompatActivity {
 
     public void setting(View view) {
         intent2 = new Intent(Gmenu.this, setting.class);
-        intent2.putExtra("username", username);
-        intent2.putExtra("email", email);
+
         startActivity(intent2);
 
 
@@ -99,7 +90,7 @@ public class Gmenu extends AppCompatActivity {
 
     public void rank(View view) {
         intent2 = new Intent(Gmenu.this, ranking.class);
-        intent2.putExtra("USERNAME", username);
+
 
         startActivity(intent2);
     }

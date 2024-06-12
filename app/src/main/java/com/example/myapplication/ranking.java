@@ -27,8 +27,8 @@ public class ranking extends AppCompatActivity {
     TextView w1score, w2score, w3score;
     TextView myrank;
     dbhelper db;
-    Intent intent2;
-    String username;
+
+
 
 
     List<String> top3list;

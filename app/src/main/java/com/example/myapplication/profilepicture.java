@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,13 +12,16 @@ public class profilepicture extends AppCompatActivity {
     Intent intent,intent2;
     dbhelper db;
     String email;
+    SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profilepicture);
         db=new dbhelper(this);
-        intent=getIntent();
-        email=intent.getStringExtra("username");
+        preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+
+//        email=intent.getStringExtra("username");
+        email = preferences.getString("email", "");
 
 
 
@@ -61,9 +65,9 @@ public class profilepicture extends AppCompatActivity {
                     imgsrc = R.drawable.icon1;
                     break;
             }
-            intent2=new Intent(profilepicture.this,Gmenu.class);
-            intent2.putExtra("email", email);
+            intent2=new Intent(profilepicture.this,profile.class);
             db.updateicon(email,imgsrc);
+
             startActivity(intent2);
             finish();
         }

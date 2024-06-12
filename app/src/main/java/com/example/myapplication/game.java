@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -53,11 +54,14 @@ public class game extends AppCompatActivity {
     long second;
     FirebaseFirestore fstore;
     String sscore;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+
         cscore=findViewById(R.id.cscore);
         bscore=findViewById(R.id.bscore);
         time=findViewById(R.id.timer);
@@ -67,9 +71,9 @@ public class game extends AppCompatActivity {
         list=new ArrayList<String>();
         list1=new ArrayList<Integer>();
         db=new dbhelper(this);
-        intent2 = getIntent();
-        username = intent2.getStringExtra("username");
-        email = intent2.getStringExtra("email");
+
+        username = preferences.getString("username", "");
+        email = preferences.getString("email", "");
         duration=db.getoldtime(email);
         nbatt=db.getatt(email);
         len=db.getlen(email);
@@ -97,12 +101,14 @@ public class game extends AppCompatActivity {
                 if(att<=nbatt){
                 tries=input.getText().toString();
                 if(tries.length()==len){
+                    if(uniquenumber(tries)){
                 tries=input.getText().toString();
+                input.setText("");
                 score=score -10*att;
                 att++;
+
                 cscore.setText((String.valueOf(cowcheck(tries, x))));
                 bscore.setText((String.valueOf(bullcheck(tries, x))));
-                //Toast.makeText(game.this, x, Toast.LENGTH_SHORT).show();
                 lvi=tries+"   "+"cow="+String.valueOf(cowcheck(tries, x))+"   "+"bull="+String.valueOf(bullcheck(tries, x));
                 list.add(lvi);
                 lv.setAdapter(arrayAdapter);
@@ -130,28 +136,54 @@ public class game extends AppCompatActivity {
                     alertDialog.show();
                 }
             }else{
+                        Toast.makeText(game.this,"all numbers must be distinct!",Toast.LENGTH_SHORT).show();
+                        input.setText("");
+                    }
+                }else{
                     Toast.makeText(game.this,"check your guess length!",Toast.LENGTH_SHORT).show();
+                    input.setText("");
                 }
             }
             else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(game.this);
-                    builder.setMessage("you finished your attempt! you lose the game");
-                    builder.setTitle("game finish");
+                    builder.setMessage("You finished your attempt! You lose the game");
+                    builder.setTitle("Game Finish");
                     builder.setCancelable(false);
-                    builder.setPositiveButton("new game", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("New Game", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             input.getText().clear();
                             recreate();
                         }
                     });
+                    builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            input.getText().clear();
+                            finish();
+                        }
+                    });
                     AlertDialog alertDialog = builder.create();
                     alertDialog.show();
                     timer.cancel();
+                    input.setText("");
+
                 }
             }
         });
     }
+
+    private boolean uniquenumber(String tries) {
+        for (int i = 0; i < tries.length(); ++i) {
+            for (int j = i + 1; j < tries.length(); ++j) {
+                if (tries.charAt(i) == tries.charAt(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 
     private void updatescore(String username, int score) {
         Map<String ,Object> userdetail=new HashMap<>();
@@ -165,12 +197,12 @@ public class game extends AppCompatActivity {
                     fstore.collection("users").document(documentId).update(userdetail).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(game.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(game.this, "NEW HIGH SCORE!", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(Exception e) {
-                            Toast.makeText(game.this, "Failed to update: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(game.this, "CHECK YOUR CONNECTION " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
@@ -201,6 +233,13 @@ public class game extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         input.getText().clear();
                         recreate();
+                    }
+                });
+                builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        input.getText().clear();
+                        finish();
                     }
                 });
                 AlertDialog alertDialog = builder.create();

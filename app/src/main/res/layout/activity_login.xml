@@ -11,7 +11,7 @@
         android:id="@+id/email"
         android:layout_width="340dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="36dp"
         android:background="#fefefe"
         android:ems="10"
         android:hint="email"
@@ -30,7 +30,7 @@
         android:id="@+id/logpass"
         android:layout_width="338dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="228dp"
         android:background="#fefefe"
         android:ems="10"
         android:hint="password"
@@ -38,7 +38,6 @@
         android:minHeight="48dp"
         android:textColor="@color/black"
         android:textColorHint="#bebfc1"
-
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,20 +49,18 @@
         android:id="@+id/login"
         android:layout_width="342dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-
+        android:layout_marginBottom="132dp"
         android:text="login"
         app:backgroundTint="#F15A25"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logpass" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:onClick="resetpassword"
         android:text="reset password"
         android:textColor="@color/white"
@@ -91,14 +88,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:onClick="signin"
+        android:onClick="signup"
         android:text="create     account"
         android:textColor="#FFEB3B"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/googlesigin" />
+
+    <ImageView
+        android:id="@+id/googlesigin"
+        android:layout_width="387dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:onClick="gologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:srcCompat="@drawable/googleins" />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logpass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,6 +74,13 @@ public class dbhelper extends SQLiteOpenHelper {
         contentValues.put("score", score);
         db.update("scores", contentValues, "username=?", new String[]{username});
     }
+    public void updateUsername(String username,String Newusername) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", Newusername);
+        db.update("users", contentValues, "username=?", new String[]{username});
+        db.update("scores", contentValues, "username=?", new String[]{username});
+    }
 
     public void updatetime(int time, String username) {
         SQLiteDatabase db = this.getWritableDatabase();

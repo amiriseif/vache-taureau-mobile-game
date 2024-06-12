@@ -10,71 +10,53 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="338dp"
-        android:layout_height="307dp"
+        android:layout_width="356dp"
+        android:layout_height="465dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/sg"
             android:onClick="begame"
-            android:text="start game"
-            android:textSize="40dp"
-            app:backgroundTint="#FF9C07"
-            app:strokeColor="@color/white"
-            app:strokeWidth="5dp" />
+            />
 
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/setting"
             android:onClick="setting"
-            android:text="setting"
-            android:textSize="40dp"
-            app:backgroundTint="#FF9C07"
-            app:strokeColor="@color/white"
-            app:strokeWidth="5dp" />
+            />
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/vr"
             android:text="view record"
             android:onClick="rank"
-            android:textSize="40dp"
-            app:backgroundTint="#FF9C07"
-            app:strokeColor="@color/white"
-            app:strokeWidth="5dp"/>/>
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            app:srcCompat="@drawable/logout"
             android:onClick="finish"
-            android:text="exit"
-            android:textSize="40dp"
-            app:backgroundTint="#FF9C07"
-            app:strokeColor="@color/white"
-            app:strokeWidth="5dp" />/>
+            />
     </LinearLayout>
 
     <TextView
         android:id="@+id/userlabel"
-        android:layout_width="136dp"
-        android:layout_height="55dp"
+        android:layout_width="272dp"
+        android:layout_height="60dp"
         android:layout_marginStart="112dp"
         android:layout_marginTop="36dp"
 

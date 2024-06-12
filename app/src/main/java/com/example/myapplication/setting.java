@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,28 +32,26 @@ public class setting extends AppCompatActivity {
     Intent intent2;
     dbhelper db ;
     RadioButton rb1,rb2,rb3;
-    Button delete;
-    FirebaseAuth auth;
-    FirebaseFirestore fstore;
-    String userid;
+
+
+    SharedPreferences preferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        auth=FirebaseAuth.getInstance();
-        fstore=FirebaseFirestore.getInstance();
-        intent2 = getIntent();
-        username = intent2.getStringExtra("username");
-        email=intent2.getStringExtra("email");
+
+        preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+
+        username = preferences.getString("username", "");
+        email = preferences.getString("email", "");
         db = new dbhelper(this);
 
         time = findViewById(R.id.radiogroup1);
         attempt = findViewById(R.id.radiogroup2);
         length = findViewById(R.id.radiogroup3);
         save = findViewById(R.id.save);
-        delete=findViewById(R.id.Daccount);
         oldduree =db.getoldtime(email);
         oldnbattempt =db.getatt(email);
         oldlength =db.getlen(email);
@@ -98,46 +97,7 @@ public class setting extends AppCompatActivity {
 
             }
         });
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(setting.this);
-                builder.setMessage("Are you sure you want to delete your account?");
-                builder.setTitle("Delete Account");
-                builder.setCancelable(true);
-                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseUser user=auth.getCurrentUser();
-                        userid=user.getUid();
-                        fstore.collection("users").document(userid).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                user.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void unused) {
-                                                Toast.makeText(setting.this, "User deleted successfully", Toast.LENGTH_SHORT).show();
-                                                db.deleteaccount(username);
-                                                finishAffinity();
-                                                intent=new Intent(setting.this, MainActivity.class);
-                                                startActivity(intent);
-                                            }
-                                        });
 
-                            }
-                        });
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                AlertDialog alertDialog=builder.create();
-                alertDialog.show();
-            }
-        });
 
 
 

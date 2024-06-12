@@ -9,15 +9,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="406dp"
-        android:layout_height="98dp"
+        android:layout_width="390dp"
+        android:layout_height="101dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137">
+        app:layout_constraintVertical_bias="0.889">
 
 
         <TextView
@@ -44,40 +44,46 @@
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="4" />
+                android:text="4"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton23"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="6" />
+                android:text="6" android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton22"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="10" />
+                android:text="10" android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton21"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="20" />
+                android:text="20" android:textSize="20dp"
+                android:textStyle="bold"/>
         </RadioGroup>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="406dp"
-        android:layout_height="98dp"
+        android:layout_width="387dp"
+        android:layout_height="114dp"
+        android:layout_marginBottom="36dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <TextView
@@ -99,50 +105,57 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="9dp"
-            tools:layout_editor_absoluteY="301dp">
+            tools:layout_editor_absoluteY="301dp"
+            android:textSize="20dp"
+            android:textStyle="bold">
 
             <RadioButton
                 android:id="@+id/radioButton34"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="4" />
+                android:text="4" android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton33"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="5" />
+                android:text="5" android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton32"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="6" />
+                android:text="6" android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/radioButton31"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="9" />
+                android:text="9" android:textSize="20dp"
+                android:textStyle="bold"/>
         </RadioGroup>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="414dp"
-        android:layout_height="584dp"
+        android:layout_width="398dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.7">
 
 
         <TextView
@@ -153,44 +166,49 @@
             android:text="time(minute)"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="72dp"
-            tools:layout_editor_absoluteY="196dp" />
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radiogroup1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="102dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="1" />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="102dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="2" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="3" />
+                android:text="3"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="4" />
+                android:text="4"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </RadioGroup>
 
     </LinearLayout>
@@ -199,21 +217,10 @@
         android:id="@+id/save"
         android:layout_width="175dp"
         android:layout_height="73dp"
+        android:layout_marginBottom="108dp"
         android:text="save"
         android:textSize="40dp"
-        app:backgroundTint="#FF9800"
-        app:layout_constraintBottom_toTopOf="@+id/Daccount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Daccount"
-        android:layout_width="423dp"
-        android:layout_height="114dp"
-        android:layout_marginBottom="4dp"
-        android:text="Delete account"
-        android:textSize="40dp"
-        app:backgroundTint="#FF0000"
+        android:backgroundTint="#FF4500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
